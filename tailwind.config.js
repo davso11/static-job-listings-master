@@ -20,7 +20,7 @@ export default {
       base: ['League Spartan', ...defaultTheme.fontFamily.sans],
     },
     screens: {
-      xs: '380px',
+      xs: '469px',
       sm: '640px',
       md: '960px',
       lg: '1280px',

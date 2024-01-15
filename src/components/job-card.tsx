@@ -23,7 +23,7 @@ export const JobCard = ({
     >
       {/* Featured indicator */}
       {data.featured && (
-        <div className="bg-primary absolute left-0 top-0 h-full w-1.5 rounded-es-md rounded-ss-md" />
+        <div className="absolute left-0 top-0 h-full w-1.5 rounded-es-md rounded-ss-md bg-primary" />
       )}
 
       {/* MOBILE: company logo */}
@@ -72,23 +72,23 @@ export const JobCard = ({
             href=""
             className="group"
           >
-            <h2 className="group-hover:text-primary font-bold transition md:text-xl">
+            <h2 className="font-bold transition group-hover:text-primary md:text-xl">
               {data.position}
             </h2>
           </a>
 
-          <div className="text-neutral flex items-center gap-x-2 md:gap-x-4">
+          <div className="flex items-center gap-x-2 text-neutral md:gap-x-4">
             <span>{data.postedAt}</span>
-            <div className="bg-neutral h-1 w-1 rounded-full" />
+            <div className="h-1 w-1 rounded-full bg-neutral" />
             <span>{data.contract}</span>
-            <div className="bg-neutral h-1 w-1 rounded-full" />
+            <div className="h-1 w-1 rounded-full bg-neutral" />
             <span>{data.location}</span>
           </div>
         </div>
       </div>
 
       {/* Divider */}
-      <div className="border-neutral my-6 border-b md:hidden" />
+      <div className="my-6 border-b border-neutral md:hidden" />
 
       {/* Tags */}
       <div className="flex flex-wrap items-center gap-4">

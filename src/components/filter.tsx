@@ -12,10 +12,7 @@ interface Props extends React.ComponentProps<'div'> {
 export const Filter = ({ data, className, removeTag, clearTags }: Props) => {
   return (
     <div
-      className={cn(
-        'filter-card absolute left-0 top-0 -translate-y-1/2 transform',
-        className,
-      )}
+      className={cn('filter-card relative left-0 top-0 transform', className)}
     >
       <div className="flex items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-4">
@@ -31,7 +28,7 @@ export const Filter = ({ data, className, removeTag, clearTags }: Props) => {
 
         <div
           role="button"
-          className="text-neutral hover:text-primary leading-[30px] hover:underline"
+          className="leading-[30px] text-neutral hover:text-primary hover:underline"
           onClick={clearTags}
         >
           Clear

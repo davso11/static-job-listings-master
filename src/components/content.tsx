@@ -12,8 +12,8 @@ export const Content = () => {
 
   const addTagToFilter = (tag: FilterItem) => {
     // No more than 3 tags
-    if (activeTags.length >= 3) {
-      toast.error('Oops! Pas plus de 3 tags svp', {
+    if (activeTags.length >= 10) {
+      toast.error('You can only add up to 10 tags', {
         className: 'font-normal',
       });
       return;
@@ -49,7 +49,12 @@ export const Content = () => {
 
   return (
     <main className="px-6">
-      <Container className="relative pb-20 pt-20 md:pb-36">
+      <Container
+        className={cn(
+          'relative pb-20 md:pb-36',
+          activeTags.length > 0 && '-top-9',
+        )}
+      >
         {/* Filter bar */}
         {activeTags.length > 0 && (
           <Filter
@@ -60,12 +65,7 @@ export const Content = () => {
         )}
 
         {/* JobList */}
-        <div
-          className={cn(
-            'flex flex-col gap-y-10 md:gap-y-6',
-            activeTags.length === 3 && 'xs:mt-0 mt-10',
-          )}
-        >
+        <div className={cn('mt-10 flex flex-col gap-y-10 md:gap-y-6')}>
           {filteredJobsByTags.map((job) => (
             <JobCard
               key={job.id}
